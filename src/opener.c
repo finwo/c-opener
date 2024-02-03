@@ -2,10 +2,11 @@
 #include <stdlib.h>
 
 char * _opener_create_cmd(const char * cmd, const char * link) {
-  char * url = (char*)malloc(strlen(cmd) + strlen(link) + 1);
+  char * url = (char*)malloc(strlen(cmd) + strlen(link) + 4);
   strcpy(url, cmd);
-  strcat(url, " ");
+  strcat(url, " '");
   strcat(url, link);
+  strcat(url, "'");
   return url;
 }
 
